@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 import json
 
-from main import lista_invitados, agregar_invitado
+from data import lista_invitados, agregar_invitado
 
 app = Flask(__name__)
 
@@ -15,6 +15,12 @@ def index():
 def agregar(nombre=''):
     agregar_invitado(nombre)
     return 'listo {nombre}'.format(nombre=nombre)
+
+
+@app.route('/about')
+def about():
+    nombre = 'gael'
+    return render_template('about.html', nombre=nombre)
 
 
 if __name__ == "__main__":
