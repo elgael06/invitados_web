@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista Invitados</title>
+</head>
+<body>
+    <h2>lista invitados</h2>
+    <a href="/add" >Agregar nuevo</a>
+    <ul>
+        {% for item in lista -%}
+            <li>
+                <label>{{item['nombre']}} </label> - 
+                {% if item['confirmado'] %}
+                    <b>confirmado.</b>
+                {%else%}
+                    <a href="/confirmar/{{item['nombre']}}">confirmar</a>
+                {%endif%}
+            </li>
+        {% endfor -%}
+    </ul>
+</body>
+</html>
