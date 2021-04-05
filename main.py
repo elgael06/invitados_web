@@ -42,12 +42,12 @@ def calcular_invitados():
     }
 
 
-# agregar
-agregar_invitado('luis')
-agregar_invitado('juan')
-agregar_invitado('pepe')
+# # agregar
+# agregar_invitado('luis')
+# agregar_invitado('juan')
+# agregar_invitado('pepe')
 
-# confirmar
-confirmar_invitacion('juan')
+# # confirmar
+# confirmar_invitacion('juan')
 
-calcular_invitados()
+# calcular_invitados()
