@@ -8,12 +8,19 @@
     <ul>
         {% for item in lista -%}
         <li class="box">
-            <label>{{item['nombre']}} </label> -
-            {% if item['confirmado'] %}
-            <b>confirmado.</b>
-            {%else%}
-            <a href="/confirmar/{{item['nombre']}}">confirmar</a>
-            {%endif%}
+            <div class="columns is-mobile">
+                <div class="column">
+                    <label>{{item.nombre}} </label>
+                </div>
+                <div class="column">
+                    {% if item.confirmado %}
+                    <b class="button is-info">confirmado</b>
+                    {%else%}
+                    <a class="button is-primary" href="/confirmar/{{item['nombre']}}">confirmar</a>
+                    {%endif%}
+                    <a href="/eliminar/{{item['nombre']}}" class="button is-danger">eliminar</a>
+                </div>
+            </div>
         </li>
         {% endfor -%}
         {% if lista == [] %}

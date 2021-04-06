@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from data import lista_invitados, agregar_invitado, confirmar_invitacion
+from data import lista_invitados, agregar_invitado, confirmar_invitacion, eliminar_invitacion
 
 app = Flask(__name__)
 
@@ -38,6 +38,12 @@ def confirmar(nombre=''):
     # y redirecciona a la pagina principal.
     ###
     confirmar_invitacion(nombre)
+    return redirect('/')
+
+
+@app.route('/eliminar/<nombre>')
+def eliminar(nombre=''):
+    eliminar_invitacion(nombre)
     return redirect('/')
 
 
