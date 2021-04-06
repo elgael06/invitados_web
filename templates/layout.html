@@ -1,0 +1,18 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Invitados</title>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+<nav>
+    <h1>Invitatos</h1>
+    <ul style="display: flex;flex-direction: row;">
+        <ol><a href="/">Inicio</a></ol>
+        <ol><a href="/add">Agregar</a></ol>
+
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+
+    {% block content %}{% endblock %}
+</section>
