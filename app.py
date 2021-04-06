@@ -66,6 +66,12 @@ def eliminar(nombre=''):
     return redirect('/')
 
 
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def page_not_found(path):
+    return 'paguina no encontrada...'
+
+
 ###
 # inicia la aplicacion web si el app esta en el main.
 ###
