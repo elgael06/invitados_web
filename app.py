@@ -1,13 +1,25 @@
 from flask import Flask, render_template, request, redirect
 from data import lista_invitados, agregar_invitado, confirmar_invitacion, eliminar_invitacion
 
-from apis.hello import hello
+from config.url_api import list_url_apis
+from controllers.hello import hello
 
 app = Flask(__name__)
 
-# apis
-app.view_functions['hello'] = hello
-app.add_url_rule('/api/hello/<name>', 'hello', hello)
+
+def create_apis():
+
+    for api in list_url_apis:
+        view = api['view']
+        func = api['func']
+        url = api['url']
+        # apis
+        app.view_functions[view] = func
+        app.add_url_rule(url, view, func)
+
+
+# llamar apis
+create_apis()
 
 
 @app.route('/')
