@@ -15,10 +15,12 @@ def agregar_invitado(nombre=''):
     # agregamos invitados a la base de datos
     new_inv = Invitado(nombre=nombre)
     new_inv.save()
+    print('Nuevo: ', new_inv.id)
 
 
 def confirmar_invitacion(invitado=''):
     # confirmamos invitacion
+    print('confirmar id: ', invitado)
     inv = Invitado.objects(id=invitado).first()
     inv.confirmo = True
     inv.save()
@@ -26,5 +28,6 @@ def confirmar_invitacion(invitado=''):
 
 def eliminar_invitacion(nombre=''):
     # eliminar invitacion
-    inv = Invitado.objects(id=nombre)
+    inv = Invitado.objects(id=nombre).first()
+    print('Eliminado: ', inv.id)
     inv.delete()

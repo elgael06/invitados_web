@@ -9,16 +9,16 @@
         {% for item in lista %}
         <li class="box">
             <div class="columns is-mobile" id='{{item.id}}' title="{{item.id}}">
-                <div class="column">
+                <div class="column is-three-quarters">
                     <label>{{item.nombre}} </label>
                 </div>
-                <div class="column">
+                <div class="column is-one-quarter" style="display: flex;justify-content: flex-end;">
                     {% if item.confirmado %}
-                    <b class="button is-info">confirmado</b>
+                    <b class="button is-info is-small">listo</b>
                     {%else%}
-                    <a class="button is-primary" href="/confirmar/{{item.id}}">confirmar</a>
+                    <a class="button is-primary is-small" href="/confirmar/{{item.id}}">confirmar</a>
                     {%endif%}
-                    <a href="/eliminar/{{item.id}}" class="button is-danger">eliminar</a>
+                    <a href="/eliminar/{{item.id}}" class="button is-danger is-small">eliminar</a>
                 </div>
             </div>
         </li>
