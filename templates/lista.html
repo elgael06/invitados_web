@@ -10,9 +10,10 @@
         <li class="box">
             <div class="columns is-mobile" id='{{item.id}}' title="{{item.id}}">
                 <div class="column is-three-quarters">
+                    <h3><b>Nombre:</b></h3>
                     <label>{{item.nombre}} </label>
                 </div>
-                <div class="column is-one-quarter" style="display: flex;justify-content: flex-end;">
+                <div class="column is-one-quarter" style="display: flex;justify-content: flex-end;align-items:center;">
                     {% if item.confirmado %}
                     <b class="button is-info is-small">listo</b>
                     {%else%}
