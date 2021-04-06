@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 {% block title %}Listado{% endblock %}
 {% block header %}
-    <h3>Lista :</h3>
+    <h3 class="title is-4">Lista :</h3>
 {% endblock %}
 
 {% block content %}
     <ul>
         {% for item in lista -%}
-        <li>
+        <li class="box">
             <label>{{item['nombre']}} </label> -
             {% if item['confirmado'] %}
             <b>confirmado.</b>

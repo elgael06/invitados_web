@@ -1,13 +1,23 @@
 {% extends 'layout.html' %}
 {% block title %}Agregar{% endblock %}
 {% block header %}
-    <h3>Agregar:</h3>
+    <h3 class="title is-4">Agregar:</h3>
 {% endblock %}
 
 {% block content %}    
     <form action="/add/" method="POST">
-        <label>Nombre: </label>
-        <input type="text" name="nombre" />
-        <input type="submit" value="Agregar" >
+        <label class="label">Nombre</label>
+        <div class="columns" style="justify-content: center;">
+
+            <div class="field has-addons is-full">
+                <div class="control">
+                    <input class="input is-focused" name="nombre" type="text" placeholder="Nombre...">
+                    <p class="help">coloca el nombre del invitado.</p>
+                </div>
+                <div class="control">
+                    <input class="button button is-info" type="submit" value="Agregar" >
+                </div>
+            </div>
+        </div>
     </form>
 {% endblock %}
