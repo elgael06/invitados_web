@@ -1,18 +1,27 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Invitados</title>
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
-<nav>
-    <h1>Invitatos</h1>
-    <ul style="display: flex;flex-direction: row;">
-        <ol><a href="/">Inicio</a></ol>
-        <ol><a href="/add">Agregar</a></ol>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %} - Invitados</title>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    </head>
 
-    </ul>
-</nav>
-<section class="content">
-    <header>
-        {% block header %}{% endblock %}
-    </header>
+    <body>
+        <nav>
+            <h1>Invitados</h1>
+            <ul style="display: flex;flex-direction: row;">
+                <ol><a href="/">Inicio</a></ol>
+                <ol><a href="/add">Agregar</a></ol>
+            </ul>
+        </nav>
+        <section class="content">
+            <header>
+                {% block header %}{% endblock %}
+            </header>
 
-    {% block content %}{% endblock %}
-</section>
+            {% block content %}{% endblock %}
+        </section>    
+    </body>
+</html>
