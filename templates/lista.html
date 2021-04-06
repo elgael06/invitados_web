@@ -8,7 +8,7 @@
     <ul>
         {% for item in lista %}
         <li class="box">
-            <div class="columns is-mobile">
+            <div class="columns is-mobile" id='{{item.id}}' title="{{item.id}}">
                 <div class="column">
                     <label>{{item.nombre}} </label>
                 </div>
@@ -16,9 +16,9 @@
                     {% if item.confirmado %}
                     <b class="button is-info">confirmado</b>
                     {%else%}
-                    <a class="button is-primary" href="/confirmar/{{item['nombre']}}">confirmar</a>
+                    <a class="button is-primary" href="/confirmar/{{item.id}}">confirmar</a>
                     {%endif%}
-                    <a href="/eliminar/{{item['nombre']}}" class="button is-danger">eliminar</a>
+                    <a href="/eliminar/{{item.id}}" class="button is-danger">eliminar</a>
                 </div>
             </div>
         </li>

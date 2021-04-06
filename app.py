@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
-from functions.data import lista_invitados, agregar_invitado, confirmar_invitacion, eliminar_invitacion
+from functions.data import lista_invitados, agregar_invitado, confirmar_invitacion, eliminar_invitacion, todos_invitados
 from config.url_api import list_url_apis
+from config.mongoDB import init_mongo_db
 
 # instancia de la app
 app = Flask(__name__)
@@ -18,6 +19,8 @@ def create_apis():
 
 # llamar apis
 create_apis()
+# correr mongo
+init_mongo_db()
 
 
 @app.route('/')
@@ -30,7 +33,7 @@ def invitados():
     ###
     # mustra el listado de invitados.
     ###
-    return render_template('lista.html', lista=lista_invitados)
+    return render_template('lista.html', lista=todos_invitados())
 
 
 @app.route('/add/', methods=['GET', 'POST'])
