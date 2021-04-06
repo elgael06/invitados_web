@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block title %}Listado{% endblock %}
 {% block header %}
-    <h3 class="title is-4">Lista :</h3>
+    <h3 class="title is-4">Mostrar invitados</h3>
 {% endblock %}
 
 {% block content %}
@@ -16,5 +16,8 @@
             {%endif%}
         </li>
         {% endfor -%}
+        {% if lista == [] %}
+            <span class="box">No hay Invitados...</span>
+        {%endif%}
     </ul>
 {% endblock %}
