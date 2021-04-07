@@ -7,7 +7,7 @@ def todos_invitados():
     # obtenemos los invitados de la base de datos
     lista = []
     for inv in Invitado.objects:
-        lista.append(inv.parseJSON())
+        lista.append(inv)
     return lista
 
 
@@ -19,11 +19,11 @@ def agregar_invitado(nombre=''):
 
 
 def confirmar_invitacion(invitado=''):
-    # confirmamos invitacion
-    print('confirmar id: ', invitado)
     inv = Invitado.objects(id=invitado).first()
     inv.confirmo = True
     inv.save()
+    # confirmamos invitacion
+    print('confirmar id: ', invitado, inv.confirmo)
 
 
 def eliminar_invitacion(nombre=''):

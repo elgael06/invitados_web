@@ -14,7 +14,7 @@
                     <label>{{item.nombre}} </label>
                 </div>
                 <div class="column is-one-quarter" style="display: flex;justify-content: flex-end;align-items:center;">
-                    {% if item.confirmado %}
+                    {% if item.confirmo %}
                     <b class="button is-info is-small">listo</b>
                     {%else%}
                     <a class="button is-primary is-small" href="/confirmar/{{item.id}}">confirmar</a>
